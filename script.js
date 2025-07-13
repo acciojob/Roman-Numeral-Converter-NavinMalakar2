@@ -20,7 +20,6 @@ function convertToRoman(num) {
 
   let result = "";
 
-  // First handle subtractive cases
   for (let [symbol, value] of subtractiveMap) {
     while (num >= value) {
       result += symbol;
@@ -28,7 +27,6 @@ function convertToRoman(num) {
     }
   }
 
-  // Now handle basic roman values using your obj
   for (let i = 0; i <= 6; i++) {
     const [symbol, value] = obj[i];
     while (num >= value) {
@@ -39,3 +37,6 @@ function convertToRoman(num) {
 
   return result;
 }
+
+// ✅ Make sure this is at the bottom:
+module.exports = convertToRoman;
